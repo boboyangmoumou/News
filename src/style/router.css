@@ -1,0 +1,22 @@
+.MainWrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
+.MainWrapper ul {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.MainWrapper ul li {
+    flex: 1;
+    list-style-type: none;
+}
+.MainWrapper ul li a{
+    color: #333;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: 800;
+}
+.MainWrapper ul li a:hover{
+    color: rgba(16, 142, 233, 1);
+}
