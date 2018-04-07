@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import {Menu} from 'antd';
 import style from './style.css'
 const Frontmenus = [
@@ -11,19 +12,25 @@ export default class Menus extends Component {
 
     render() {
         return(
-            <Menu
-                mode="horizontal"
-                class={style.MenuContainer}
-                onclick={this.handleClick}
-            >
-                {
-                    Frontmenus.map((item,index) => (
-                        <Menu.Item key={item.url}>
-                            {item.name}
-                        </Menu.Item>
-                    ))                    
-                }
-            </Menu>
+            // <Menu
+            //     mode="horizontal"
+            //     class={style.MenuContainer}
+            //     onclick={this.handleClick}
+            // >
+            //     {
+            //         Frontmenus.map((item,index) => (
+            //             <Menu.Item key={item.url}>
+            //                 {item.name}
+            //             </Menu.Item>
+            //         ))                    
+            //     }
+            // </Menu>
+            <div>
+                <ul>
+                    <li><Link to="/">首页</Link></li>
+                    <li><Link to="/detail">详情</Link></li>
+                </ul>
+            </div>            
         )
     }
 }

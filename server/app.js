@@ -10,27 +10,14 @@ const article= require('./api/articles');
 const user = require('./api/user');
 const index = require('./api/index');
 const app = express();
-const router = express.Router();
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1/blog1');
+// const router = express.Router();
 
-mongoose.connection.on("connected",function (){
-    console.log("mongodb connected success")
-})
-
-mongoose.connection.on("error", function (){
-    console.log("mongodb connected error")
-})
-
-mongoose.connection.on("disconnection", function (){
-    console.log("mongodb connected disconnection")
-})
-router.all('*',function (req,res,next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-  next();
-});
+// app.all('*',function (req,res,next) {
+//   res.header("Access-Control-Allow-Origin", "true");
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+//   next();
+// });
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.html',ejs.__express)

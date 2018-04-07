@@ -31,14 +31,14 @@ router.get('/getArticles', function(req, res) {
     };
     Article.count(searchCondition)
         .then(count => {
-            console.log(count);
+            // console.log(count);
             responseData.total = count;
-            Article.find(searchCondition, '_id author title content', {
+            Article.find(searchCondition, '_id author title content tags', {
                 skip: skip,
                 limit: 5
             }).then(result => {
                 responseData.list = result;
-                console.log(result);
+                // console.log(result);
                 responseClient(res, 200, 0, 'success', responseData)
             }).catch(err => {
                 console.log(err);

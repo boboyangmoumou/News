@@ -17,9 +17,9 @@ export default class front extends Component {
                 <Menu/>
                 <Switch>
                     <Route exact path="/" component={Home}/>
-                    <Route  path={`/detail/:id`} component={Detail}/>
-                    <Route  path={`/:tag`} component={Home}/>
-                    <Route  path="/notFound" component={notFound}/>
+                    <Route path={`/detail/:id`} component={Detail}/>
+                    <Route path={`/:tag`} component={Home}/>
+                    <Route component={notFound}/>
                 </Switch>
             </div>
         )
