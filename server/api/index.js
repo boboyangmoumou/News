@@ -6,7 +6,13 @@ const Article = require('../models/article');
 const Tags = require('../models/tags');
 
 router.use('/user',require('./user'));
-
+// const Main = require('./main');
+// router.get('/index',function(req,res) {
+//     res.send(Main.beforeSendRequest());
+// })
+// router.get('/',function(req,res,next){
+//     res.send("aaaaa");
+// })
 // 获取全部标签
 router.get('/getAllTags', function(req, res) {
     Tags.find(null, 'name').then(data => {

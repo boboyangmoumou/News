@@ -2,6 +2,12 @@ const Express = require('express');
 const router = Express.Router();
 const Tags = require('../models/tags');
 const {responseClient} = require('./util');
+const fs = require('fs');
+// const pathResult = require('../public/text.json');
+var files = "../public/test.json";
+
+// console.log(data);
+
 router.get('/list', function(req, res, next) {
     res.send("ccc");
 });
@@ -44,5 +50,16 @@ router.get('/delTag', function(req, res) {
             console.log(err);
             responseClient(res);
         })
+})
+router.get('/getPath',function(req, res, next) {
+    // var result  = JSON.parse(fs.readFileSync(files));
+    var data = fs.readFileSync(files,"utf-8");
+    // console.log(result);
+    let itemsList = data.split(',').filter(world => world.length > 10);
+    res.json({
+        status: '0',
+        msg: '数据正确',
+        result: itemsList.pop()
+    })
 })
 module.exports = router;
